@@ -11,3 +11,15 @@
  *
  * @package         Microblog_Tools
  */
+
+add_filter('content_save_pre', 'mbt_link_urls', 10, 1);
+
+function mbt_link_urls( $content ) {
+	return make_clickable( $content );
+}
+
+add_filter('content_save_pre', 'mbt_link_hashtags', 10, 1);
+
+function mbt_link_hashtags( $content ) {
+	return preg_replace( '/(\s+)#(\w+)(\s+)/', '$1<a rel="nofollow" href="' . home_url() . '/?s=%23$2">#$2</a>$3', $content );
+}
