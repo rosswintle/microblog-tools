@@ -23,3 +23,21 @@ add_filter('content_save_pre', 'mbt_link_hashtags', 10, 1);
 function mbt_link_hashtags( $content ) {
 	return preg_replace( '/(\s+)#(\w+)(\s+)/', '$1<a rel="nofollow" href="' . home_url() . '/?s=%23$2">#$2</a>$3', $content );
 }
+
+/*
+ *  This filter adds the date and time as a title, if the title is empty.
+ *
+ *  Inspired by https://github.com/colin-walker/wordpress-blank-title/
+ */
+
+function mbt_dated_titles( $title ) {
+    if ( empty( $title ) {
+      return date( 'd/m/Y, H:i' );
+    } else {
+      return $title;
+    }
+}
+
+add_filter( 'title_save_pre', 'mbt_dated_titles', 10, 1 );
+
+
