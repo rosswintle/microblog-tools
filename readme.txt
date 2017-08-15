@@ -42,6 +42,9 @@ No one has asked me any question yet.
 
 == Changelog ==
 
+= 0.1.1 =
+* Fixes for hashtag matching
+
 = 0.1 =
 * Initial relese with some very basic functionality
 
