@@ -27,7 +27,7 @@ add_filter('content_save_pre', 'mbt_link_urls', 10, 1);
  */
 
 function mbt_link_hashtags( $content ) {
-	return preg_replace( '/(\s+)#(\w+)(\s+)/', '$1<a rel="nofollow" href="' . home_url() . '/?s=%23$2">#$2</a>$3', $content );
+	return preg_replace( '/([\s+]|^)#(\w+)([^\w]|$)/', '$1<a rel="nofollow" href="' . home_url() . '/?s=%23$2">#$2</a>$3', $content );
 }
 
 add_filter('content_save_pre', 'mbt_link_hashtags', 10, 1);
@@ -40,7 +40,7 @@ add_filter('content_save_pre', 'mbt_link_hashtags', 10, 1);
  */
 
 function mbt_dated_titles( $title ) {
-    if ( empty( $title ) {
+    if ( empty( $title ) ) {
       return date( 'd/m/Y, H:i' );
     } else {
       return $title;
