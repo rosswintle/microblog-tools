@@ -12,17 +12,26 @@
  * @package         Microblog_Tools
  */
 
-add_filter('content_save_pre', 'mbt_link_urls', 10, 1);
+/*
+ *  This filter makes URL's and email addresses into proper links.
+ */
 
 function mbt_link_urls( $content ) {
 	return make_clickable( $content );
 }
 
-add_filter('content_save_pre', 'mbt_link_hashtags', 10, 1);
+add_filter('content_save_pre', 'mbt_link_urls', 10, 1);
+
+/*
+ *  This filter turns hashtags into links to a search for that hashtag
+ */
 
 function mbt_link_hashtags( $content ) {
 	return preg_replace( '/(\s+)#(\w+)(\s+)/', '$1<a rel="nofollow" href="' . home_url() . '/?s=%23$2">#$2</a>$3', $content );
 }
+
+add_filter('content_save_pre', 'mbt_link_hashtags', 10, 1);
+
 
 /*
  *  This filter adds the date and time as a title, if the title is empty.
