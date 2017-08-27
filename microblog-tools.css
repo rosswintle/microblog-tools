@@ -1,0 +1,21 @@
+/**
+ * All of the CSS for your dashboard-specific functionality should be
+ * included in this file.
+ */
+#microblog-tools-post-content-wrap {
+	margin-bottom: 1em;
+}
+#microblog-tools-post-content-wrap #microblog-tools-post-content-prompt-text {
+	font-size: 1.1em;
+	padding: 5px 8px;
+}
+#microblog-tools-widget p.submit {
+	position: relative;
+}
+#microblog-tools-char-count {
+	display: block;
+	width: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
