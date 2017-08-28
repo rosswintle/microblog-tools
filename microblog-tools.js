@@ -19,17 +19,16 @@
 				beforeSend: function ( xhr ) {
                 	xhr.setRequestHeader( 'X-WP-Nonce', $('form#microblog-tools-widget input[name="_wpnonce"]').val() );
             	},
-				function( data, textStatus ) {
-					console.log('YAY');
-				// TODO: SORT THIS POST CALL OUT
-				// $('form#wp-quick-image-widget .wpqi-error').remove();
-				// if (0 === parseInt(data, 10)) {
-				// 	$('form#wp-quick-image-widget').append('<p class="wpqi-error">Sorry - I couldn\'t create a post. Did you enter a title and content?</p>');
-				// 	$('#wpqi-save-post').val('Publish this');
-				// 	$('.wpqi-disable-on-submit').attr('disabled', false);
-				// } else {
-				// 	$('form#wp-quick-image-widget').append('<a href="' + data.editUrl + '">Edit post</a> | <a href="' + data.permalink + '">View post</a>');
-				// 	$('#wpqi-save-post').val('Done!');
+				success: function( data, textStatus ) {
+					$('form#microblog-tools-widget .wpqi-error').remove();
+					console.log(data);
+					$('form#microblog-tools-widget').append('<a href="' + data.link + '">Edit post</a> | <a href="' + data.link + '">View post</a>');
+					$('#microblog-tools-save-post').val('Done!');
+				},
+				error: function ( data, textStatus ) {
+					$('form#microblog-tools-widget').append('<p class="mbt-error">Sorry - I couldn\'t create a post.</p>');
+					$('#microblog-tools-save-post').val('Publish this');
+					$('.microblog-tools-disable-on-submit').attr('disabled', false);
 				}
 			});
 		});
