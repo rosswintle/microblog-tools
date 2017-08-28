@@ -15,6 +15,7 @@
 				url: $(this).attr('action'),
 				data: {
 						content: $('#microblog-tools-post-content').first().val(),
+						status: 'publish'
 					},
 				beforeSend: function ( xhr ) {
                 	xhr.setRequestHeader( 'X-WP-Nonce', $('form#microblog-tools-widget input[name="_wpnonce"]').val() );
