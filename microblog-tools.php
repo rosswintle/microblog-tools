@@ -100,14 +100,18 @@ function mbt_display_widget() {
 			<textarea name="microblog-tools-post-content" id="microblog-tools-post-content" class="mceEditor" rows="3" cols="15" autocomplete="off"></textarea>
 		</div>
 
+		<p id="microblog-tools-char-count">
+			Length: <span id="microblog-tools-chars">0</span>
+		</p>
+
 		<p class="submit">
 			<input type="hidden" name="action" id="microblog-tools-post-action" value="microblog-tools-save">
 			<input type="hidden" name="post_type" value="post">
 			<?php wp_nonce_field('wp_rest'); ?>
 			<input type="submit" name="save" id="microblog-tools-save-post" class="button button-primary microblog-tools-disable-on-submit" value="<?php _e('Publish this', 'microblog-tools'); ?>">
 			<br class="clear">
-			<span id="microblog-tools-char-count">0</span>
 		</p>
+
 
 	</form>
 <?php

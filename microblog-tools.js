@@ -58,9 +58,16 @@
 		});
 
 		// Make the character count work
-		var charCount = $('#microblog-tools-char-count');
+		var charCount = $('#microblog-tools-chars');
 		$('#microblog-tools-post-content').on( 'keyup', function updateCharCount() {
 			charCount.html( this.textLength );
+			if ( this.textLength > 280 ) {
+				charCount.addClass('over');
+				$('#microblog-tools-save-post').attr('disabled', true);
+			} else {
+				charCount.removeClass('over');
+				$('#microblog-tools-save-post').attr('disabled', false);
+			}
 		});
 	});
 

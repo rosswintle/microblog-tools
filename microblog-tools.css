@@ -9,13 +9,15 @@
 	font-size: 1.1em;
 	padding: 5px 8px;
 }
-#microblog-tools-widget p.submit {
+#microblog-tools-widget {
 	position: relative;
 }
 #microblog-tools-char-count {
 	display: block;
 	width: auto;
-	position: absolute;
-	top: 0;
-	right: 0;
+	float: right;
+	margin: 0;
+}
+#microblog-tools-chars.over {
+	color: red;
 }
