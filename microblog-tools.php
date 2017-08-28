@@ -7,7 +7,7 @@
  * Author URI:      https://rosswintle.uk
  * Text Domain:     microblog-tools
  * Domain Path:     /languages
- * Version:         0.1.2
+ * Version:         0.1.3
  *
  * @package         Microblog_Tools
  */

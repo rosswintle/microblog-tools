@@ -3,7 +3,7 @@ Contributors: magicroundabout
 Tags: microblogging
 Requires at least: 4.7
 Tested up to: 4.8.1
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -41,6 +41,9 @@ e.g.
 No one has asked me any question yet.
 
 == Changelog ==
+
+= 0.1.3 =
+* Improvements to Dashboard widget. In particular, it now published rather than saving a draft.
 
 = 0.1.2 =
 * Add a WordPress Dashboard widget for quick posting
